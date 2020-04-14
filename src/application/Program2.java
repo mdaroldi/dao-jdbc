@@ -1,11 +1,8 @@
 package application;
 
-import java.util.Date;
-
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
 import model.entities.Department;
-import model.entities.Seller;
 
 public class Program2 {
 
@@ -13,10 +10,14 @@ public class Program2 {
 		
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
-		System.out.println("\n=== Teste 4: seller insert ===");
+		System.out.println("=== Teste 1: department insert ===");
 		Department dep = new Department(null, "Apparel");
 		departmentDao.insert(dep);
 		System.out.println("Inserted! New id = " + dep.getId());
+		
+		System.out.println("\n=== Teste 2: department delete ===");
+		departmentDao.deleteById(6);
+		System.out.println("Delete completed");
 
 	}
 
